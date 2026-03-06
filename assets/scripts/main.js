@@ -137,6 +137,7 @@ function clickPunto(punto,seccion,p){
     global_audio = audios_data[seccion][p]
     global_audio.currentTime = 0
     global_audio.play()
+    click_mp3.currentTime = 0
     click_mp3.play()
 
     //comprobar
@@ -176,7 +177,7 @@ function setScene(){
         animacion_cubo = null;
 
         getE('cubo-title').innerHTML = titulos[scene-1]
-        getE('cubo-title').className = 'cubo-title-on'
+        getE('cubo-title').className = 'cubo-title-on cubo-title-scene'+scene
         if(scene==1){
             global_audio = intro1_mp3
         }else if(scene==2){
@@ -198,7 +199,7 @@ function setScene(){
 function nextGame(){
     getE('tooltip').className = 'tooltip-off'
     scene++
-    if(scene<puntos_data.length){
+    if(scene>puntos_data.length){
         alert("terminó")
     }else{
         setScene()

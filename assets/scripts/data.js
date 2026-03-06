@@ -210,6 +210,6 @@ var puntos_data = [
 
 var titulos = [
     'Encuentra las violaciones en la oficina de ILN Consulting',
-    'Identifica las fallas en el sitio de obra',
-    'Detecta las fallas en el manejo de emergencias'
+    'Detecta las fallas en el manejo de emergencias',
+    'Identifica las fallas en el sitio de obra'
 ]

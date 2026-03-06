@@ -1,3 +1,76 @@
 @media (min-width: 1537px) {
+    /**************INSTRUCCIONES************/
 
+    #instrucciones-box,
+    #instrucciones2-box{
+        width: 600px;
+        padding: 40px;
+    }
+    #instrucciones-box > img{
+        width: 140px;
+        margin-bottom: 20px;
+    }
+    #instrucciones-box > h2{
+        font-size: 1.8rem;
+        margin-bottom: 25px;
+    }
+    #instrucciones-box > p{
+        font-size: 1.25rem;
+    }
+    .instrucciones-box-row{
+        margin: 35px 0px;
+    }
+    .instrucciones-box-col h3{
+        font-size: 2.2rem;
+        margin-bottom: 5px;
+    }
+    .instrucciones-box-col p{
+        font-size: 1.3rem;
+    }
+
+    .instrucciones2-box-col{
+        margin-bottom: 15px;
+    }
+    .instrucciones2-box-col > img{
+        width: 70px;
+        margin-right: 20px;
+    }
+    .instrucciones2-box-col > p{
+        width: auto;
+        width: calc(100% - 90px);
+        width: -moz-calc(100% - 90px);
+        font-size: 1.4rem;
+    }
+
+    .instrucciones-box-btn1,
+    .instrucciones-box-btn2,
+    .instrucciones2-box-btn{
+        padding: 12px;
+        font-size: 1.4rem;
+    }
+    .instrucciones-box-btn1,
+    .instrucciones-box-btn2{
+        width: 420px;
+    }
+    .instrucciones-box-btn1{
+        margin-bottom: 10px;
+    }
+
+    #cubo-title{
+        padding: 15px 25px;
+        font-size: 1.5rem;
+    }
+
+    #tooltip{
+        max-width: 600px;
+        padding: 20px;
+    }
+    #tooltip p{
+        font-size: 1.25rem;
+    }
+
+    .punto{
+        width: 40px;
+        height: 40px;
+    }
 }

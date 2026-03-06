@@ -69,7 +69,6 @@
     padding: 10px 20px;
     border-radius: 8px 0px 8px 0px;
     background-color: #4b85fd;
-    left: 15px;
     
     font-family: 'Britannic-Regular';
     font-size: 1.2rem;
@@ -78,6 +77,15 @@
     text-shadow: 0px 0px 3px rgba(0,0,0,0.5);
     box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.7);
     transition: top 0.5s;
+}
+.cubo-title-scene1{
+    left: 15px;
+}
+.cubo-title-scene2{
+    right: 15px;
+}
+.cubo-title-scene3{
+    right: 15px;
 }
 .cubo-title-on{
     top: 15px;
@@ -300,6 +308,7 @@
     align-items: center;
     justify-content: flex-start;
     flex-wrap: wrap;
+    margin-bottom: 10px;
 }
 .instrucciones2-box-col > img{
     width: 60px;
