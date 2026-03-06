@@ -195,13 +195,13 @@
 }
 .tooltip-before-top{
     top: -9px;
-    border-bottom: 10px solid #ffffff;
+    border-bottom: 10px solid #fff;
 }
 .tooltip-before-bot{
     top: 100%;
     top: calc(100% - 1px);
     top: -moz-calc(100% - 1px);
-    border-top: 10px solid #ffffff;
+    border-top: 10px solid #fff;
 }
 #tooltip-after{
     position: absolute;
@@ -223,7 +223,7 @@
     position: relative;
     font-family: 'Inter-Regular';
     font-size: 1rem;
-    color: #000000;
+    color: #000;
     text-align: center;
 }
 #tooltip p span{
@@ -233,7 +233,8 @@
 /**************INSTRUCCIONES************/
 
 #instrucciones,
-#instrucciones2{
+#instrucciones2,
+#informacion{
     position: absolute;
     width: 100%;
     height: 100%;
@@ -245,13 +246,21 @@
 }
 
 #instrucciones-box,
+#instrucciones2-box,
+#informacion-box{
+    height: auto;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 4px 4px 10px 0px rgba(0,0,0,0.3);
+}
+#instrucciones-box,
 #instrucciones2-box{
     width: 450px;
-    height: auto;
     padding: 30px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 4px 4px 10px 0px rgba(0,0,0,0.3);
+    background-color: #fff;
+}
+#informacion-box{
+    width: 85%;
 }
 #instrucciones-box > img{
     width: 100px;
@@ -270,7 +279,7 @@
 #instrucciones-box > p{
     font-family: 'Inter-SemiBold';
     font-size: 1rem;
-    color: #000000;
+    color: #000;
     text-align: center;
 }
 .instrucciones-box-row{
@@ -298,7 +307,7 @@
 .instrucciones-box-col p{
     font-family: 'Inter-Regular';
     font-size: 1.1rem;
-    color: #000000;
+    color: #000;
     text-align: center;
 }
 
@@ -311,16 +320,16 @@
     margin-bottom: 10px;
 }
 .instrucciones2-box-col > img{
-    width: 60px;
+    width: 80px;
     height: auto;
     margin-right: 10px;
 }
 .instrucciones2-box-col > p{
     width: auto;
-    width: calc(100% - 70px);
-    width: -moz-calc(100% - 70px);
+    width: calc(100% - 90px);
+    width: -moz-calc(100% - 90px);
     font-family: 'Britannic-Regular';
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: #000;
 }
 .instrucciones2-box-row{
@@ -333,15 +342,15 @@
 
 .instrucciones-box-btn1,
 .instrucciones-box-btn2,
-.instrucciones2-box-btn{
+.instrucciones2-box-btn1,
+.instrucciones2-box-btn2,
+.informacion-box-btn1,
+.informacion-box-btn2{
     display: flex;
     justify-content: center;
     height: auto;
     padding: 10px;
-    margin-left: auto;
-    margin-right: auto;
 
-    font-family: 'Britannic-Regular';
     color: #fff;
     font-size: 1.2rem;
     text-align: center;
@@ -350,30 +359,60 @@
 }
 .instrucciones-box-btn1,
 .instrucciones-box-btn2{
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Britannic-Regular';
+}
+.instrucciones2-box-btn1 span:first-child,
+.informacion-box-btn1 span:first-child{
+    color: #ff0;
+}
+.instrucciones2-box-btn1 span:last-child,
+.informacion-box-btn1 span:last-child{
+    font-family: 'Britannic-Regular';
+}
+.instrucciones2-box-btn2 span:first-child,
+.informacion-box-btn2 span:first-child{
+    font-family: 'Britannic-Regular';
+}
+.instrucciones2-box-btn2 span:last-child,
+.informacion-box-btn2 span:last-child{
+    margin-left: 5px;
+}
+
+.instrucciones-box-btn1,
+.instrucciones-box-btn2{
     width: 300px;
 }
-.instrucciones2-box-btn{
+.instrucciones2-box-btn1,
+.instrucciones2-box-btn2,
+.informacion-box-btn1,
+.informacion-box-btn2{
     width: auto;
 }
 
 .instrucciones-box-btn1,
-.instrucciones2-box-row > button:first-child{
+.instrucciones2-box-btn1,
+.informacion-box-btn1{
     background-color: #4b85fd;
 }
 .instrucciones-box-btn1{
     margin-bottom: 5px;
 }
 .instrucciones-box-btn1:hover,
-.instrucciones2-box-row > button:first-child{
+.instrucciones2-box-btn1:hover,
+.informacion-box-btn1:hover{
     background-color: #4174ce;
     animation: animacion-boton-over 0.25s infinite forwards linear;
 }
 .instrucciones-box-btn2,
-.instrucciones2-box-row > button:last-child{
+.instrucciones2-box-btn2,
+.informacion-box-btn2{
     background-color: #6b7280;
 }
 .instrucciones-box-btn2:hover,
-.instrucciones2-box-row > button:last-child{
+.instrucciones2-box-btn2:hover,
+.informacion-box-btn2:hover{
     background-color: #5a616b;
     animation: animacion-boton-over 0.25s infinite forwards linear;
 }
@@ -396,7 +435,8 @@
 }
 
 .instrucciones-off #instrucciones-box,
-.instrucciones-off #instrucciones2-box{
+.instrucciones-off #instrucciones2-box,
+.instrucciones-off #informacion-box{
     top: -20px;
     opacity: 0;
 
@@ -410,9 +450,160 @@
 }
 
 .instrucciones-on #instrucciones-box,
-.instrucciones-on #instrucciones2-box{
+.instrucciones-on #instrucciones2-box,
+.instrucciones-on #informacion-box{
     top: 0px;
     opacity: 1;
 
     transition: top 0.25s 0.25s, opacity 0.25s 0.25s;
+}
+
+/*************INFORMACIÓN**************/
+
+.informacion-box-header{
+    width: 100%;
+    background-color: #4b85fd;
+    padding: 10px;
+}
+.informacion-box-header h1{
+    font-family: 'Britannic-Bold';
+    font-size: 1.4rem;
+    color: #fff;
+    margin-bottom: 2px;
+    text-align: center;
+}
+.informacion-box-header h2{
+    font-family: 'Britannic-Regular';
+    font-size: 1.2rem;
+    color: #fff;
+    text-align: center;
+}
+            
+.informacion-box-body{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 0px 0px;
+    background-color: #f7f9f9;
+}
+.informacion-box-body-card{
+    width: 50%;
+    width: calc((100% - (15px * 3)) / 2);
+    width: -moz-calc((100% - (15px * 3)) / 2);
+    height: auto;
+    border-radius: 8px;
+    background-color: #fff;
+    padding: 15px;
+    border-left-width: 5px;
+    border-left-style: solid;
+    margin: 10px 0px;
+}
+.informacion-body-card-title{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.informacion-body-card-title div{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+}
+.informacion-body-card-title div img{
+    width: 30px;
+    margin: 0px;
+}
+.informacion-body-card-title h3{
+    width: auto;
+    width: calc(100% - 65px);
+    width: -moz-calc(100% - 65px);
+    font-family: 'Britannic-Bold';
+    font-size: 1.2rem;
+    color: #000;
+}
+.informacion-body-card-title p{
+    position: absolute;
+    width: auto;
+    height: auto;
+    padding: 5px 10px;
+    border-radius: 20px;
+    background-color: #d93300;
+    font-family: 'Britannic-Regular';
+    font-size: 1rem;
+    color: #fff;
+    right: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.informacion-body-card-list{
+    display: block;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+}
+.informacion-body-card-list li{
+    position: relative;
+    display: block;
+    width: 100%;
+    min-height: 15px;
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    margin-bottom: 5px;
+    padding-left: 25px;
+
+    font-family: 'Inter-Regular';
+    font-size: 0.9rem;
+    color: #000;
+    text-align: left;
+    font-weight: normal;
+    line-height: normal;
+    background-repeat: no-repeat;
+    background-size: 13px 13px;
+    background-position: 0px 2px;
+    background-image: url(../images/icon-list.svg);
+}
+
+.informacion-box-botones{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: #ffffff;
+    padding: 10px 15px;
+}
+
+
+.informacion-box-body .informacion-box-body-card:nth-child(1){
+    border-left-color: #4b85fd;
+}
+.informacion-box-body .informacion-box-body-card:nth-child(1) .informacion-body-card-title > div{
+    background-color: #4b85fd;
+}
+.informacion-box-body .informacion-box-body-card:nth-child(2){
+    border-left-color: #96cc36;
+}
+.informacion-box-body .informacion-box-body-card:nth-child(2) .informacion-body-card-title > div{
+    background-color: #96cc36;
+}
+.informacion-box-body .informacion-box-body-card:nth-child(3){
+    border-left-color: #e87a02;
+}
+.informacion-box-body .informacion-box-body-card:nth-child(3) .informacion-body-card-title > div{
+    background-color: #e87a02;
+}
+.informacion-box-body .informacion-box-body-card:nth-child(4){
+    border-left-color: #d93300;
+}
+.informacion-box-body .informacion-box-body-card:nth-child(4) .informacion-body-card-title > div{
+    background-color: #d93300;
 }

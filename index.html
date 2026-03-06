@@ -74,8 +74,86 @@
                     <p>Niveles</p>
                 </div>
             </div>
-            <!--<button class="instrucciones-box-btn1">Estudiar responsabilidades</button>-->
-            <button class="instrucciones-box-btn2" onclick="clickComenzar()">Comenzar la investigación</button>
+            <button class="instrucciones-box-btn1" onclick="clickInformacion()">Estudiar responsabilidades</button>
+            <button class="instrucciones-box-btn2" onclick="clickInstrucciones()">Comenzar la investigación</button>
+        </div>
+    </div>
+
+    <div id="informacion" class="instrucciones-off">
+        <div id="informacion-box">
+            <div class="informacion-box-header">
+                <h1>Tus Roles y Responsabilidades</h1>
+                <h2>Seguridad y Salud en el Trabajo</h2>
+            </div>
+            <div class="informacion-box-body">
+                <div class="informacion-box-body-card">
+                    <div class="informacion-body-card-title">
+                        <div>
+                            <img src="assets/images/iformacion-1.svg" />
+                        </div>
+                        <h3>Compromiso y normativa</h3>
+                    </div>
+                    <ul class="informacion-body-card-list">
+                        <li>Conocer y tener clara la política de Seguridad, Salud en el Trabajo, Seguridad Vial y Medio ambiente.</li>
+                        <li>Conocer y cumplir las normas, reglamentos e instrucciones en el Sistema de Gestión de Seguridad y Salud en el trabajo, Medio ambiente y PESV de ILN Consulting SAS.</li>
+                        <li>Participar en las actividades de formación en Seguridad, Salud en el Trabajo, Medio ambiente y Seguridad vial definidos en el plan anual de capacitación.</li>
+                        <li>Participar y contribuir al cumplimiento de los objetivos de Seguridad, Salud en el Trabajo, Medio ambiente y Seguridad vial.</li>
+                    </ul>
+                </div>
+
+                <div class="informacion-box-body-card">
+                    <div class="informacion-body-card-title">
+                        <div>
+                            <img src="assets/images/iformacion-2.svg" />
+                        </div>
+                        <h3>Mi Salud y Bienestar</h3>
+                    </div>
+                    <ul class="informacion-body-card-list">
+                        <li>Procurar el cuidado integral de su salud.</li>
+                        <li>Suministrar información clara, completa y veraz sobre su estado de salud.</li>
+                        <li>Conocer los protocolos de bioseguridad, prevención y mitigación COVID-19, cumplirlo y garantizar su estricto cumplimiento.</li>
+                    </ul>
+                </div>
+
+                <div class="informacion-box-body-card">
+                    <div class="informacion-body-card-title">
+                        <div>
+                            <img src="assets/images/iformacion-3.svg" />
+                        </div>
+                        <h3>Gestión de Riesgos y Entorno</h3>
+                    </div>
+                    <ul class="informacion-body-card-list">
+                        <li>Conocer los riesgos existentes en su lugar de trabajo.</li>
+                        <li>Participar en la prevención de riesgos laborales mediante las actividades que se realicen en ILN Consulting SAS.</li>
+                        <li>Estar familiarizado con los planes de prevención, preparación, respuesta ante emergencias.</li>
+                        <li>Conocer e implementar el programa de gestión integral de residuos sólidos corporativo y del cliente.</li>
+                    </ul>
+                </div>
+
+                <div class="informacion-box-body-card">
+                    <div class="informacion-body-card-title">
+                        <div>
+                            <img src="assets/images/iformacion-4.svg" />
+                        </div>
+                        <h3>Reporte inmediato</h3>
+                        <p>Tu deber más importante</p>
+                    </div>
+                    <ul class="informacion-body-card-list">
+                        <li>Reportar inmediatamente la ocurrencia de un incidente o accidente de trabajo al jefe inmediato, director y líder HSE.</li>
+                        <li>Informar oportunamente a su jefe y al responsable de Seguridad, Salud en el Trabajo, Seguridad Vial y Medio ambiente acerca de los peligros y riesgos latentes en su sitio de trabajo.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="informacion-box-botones">
+                <button class="informacion-box-btn1" onclick="clickVolverInstrucciones()">
+                    <span>←</span>
+                    <span>Volver al inicio</span>
+                </button>
+                <button class="informacion-box-btn2" onclick="clickInstrucciones()">
+                    <span>!Entendido¡ Continuar al juego</span>
+                    <span>→</span>
+                </button>
+            </div>
         </div>
     </div>
 
@@ -95,13 +173,13 @@
             </div>
 
             <div class="instrucciones2-box-row">
-                <button class="instrucciones2-box-btn">
+                <button class="instrucciones2-box-btn1" onclick="clickVolverInstrucciones()">
                     <span>←</span>
                     <span>Volver al inicio</span>
                 </button>
-                <button class="instrucciones2-box-btn">
-                    <span>→</span>
+                <button class="instrucciones2-box-btn2" onclick="clickComenzar()">
                     <span>Iniciar el juego</span>
+                    <span>→</span>
                 </button>
             </div>
         </div>
@@ -130,6 +208,7 @@
 
         var intro_mp3 = null;
         var instrucciones_mp3 = null;
+        var informacion_mp3 = null;
 
         var intro1_mp3 = null;
         var intro2_mp3 = null;
@@ -165,6 +244,15 @@
                 intro_mp3 = data
                 checkAudios(true)
             }})
+            loadTrack({src: 'assets/audios/instrucciones.mp3', callBack: function(data){
+                instrucciones_mp3 = data
+                checkAudios(true)
+            }})
+            loadTrack({src: 'assets/audios/informacion.mp3', callBack: function(data){
+                informacion_mp3 = data
+                checkAudios(true)
+            }})
+
             loadTrack({src: 'assets/audios/1/intro.mp3', callBack: function(data){
                 intro1_mp3 = data
                 checkAudios(true)
@@ -175,10 +263,6 @@
             }})
             loadTrack({src: 'assets/audios/3/intro.mp3', callBack: function(data){
                 intro3_mp3 = data
-                checkAudios(true)
-            }})
-            loadTrack({src: 'assets/audios/instrucciones.mp3', callBack: function(data){
-                instrucciones_mp3 = data
                 checkAudios(true)
             }})
         }
@@ -193,13 +277,43 @@
             getE('instrucciones').className = 'instrucciones-on'
             getE('cubo-container').className = 'cubo-container-animation'
             
-            underground_mp3.play()
+            intro_mp3.play()
+        }
+
+        function clickInformacion(){
+            intro_mp3.pause()
+            getE('instrucciones').className = 'instrucciones-off'
+
+            getE('informacion').className = 'instrucciones-on'
+            informacion_mp3.currentTime = 0
+            informacion_mp3.play()
+        }
+        
+        function clickInstrucciones(){
+            intro_mp3.pause()
+            getE('instrucciones').className = 'instrucciones-off'
+            informacion_mp3.pause()
+            getE('informacion').className = 'instrucciones-off'
+
+            getE('instrucciones2').className = 'instrucciones-on'
+            instrucciones_mp3.currentTime = 0
+            instrucciones_mp3.play()
+        }
+
+        function clickVolverInstrucciones(){
+            instrucciones_mp3.pause()
+            getE('instrucciones2').className = 'instrucciones-off'
+            informacion_mp3.pause()
+            getE('informacion').className = 'instrucciones-off'
+            
+            getE('instrucciones').className = 'instrucciones-on'
+            intro_mp3.currentTime = 0
             intro_mp3.play()
         }
 
         function clickComenzar(){
-            intro_mp3.pause()
             startGame()
+            underground_mp3.play()
             over_mp3.play()
         }
     </script>

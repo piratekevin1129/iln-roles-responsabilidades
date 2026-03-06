@@ -1,4 +1,4 @@
-var total_audios = 9;
+var total_audios = 10;
 var total_images = 0;
 var total_extra = puntos_data[0].length + puntos_data[1].length + puntos_data[2].length;
 var total_files = (total_audios + total_images + total_extra)

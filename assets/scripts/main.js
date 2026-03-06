@@ -162,7 +162,8 @@ function overBtn(){
 }
 
 function startGame(){
-    getE('instrucciones').className = 'instrucciones-off'
+    instrucciones_mp3.pause()
+    getE('instrucciones2').className = 'instrucciones-off'
     scene++
     setScene()
 }
