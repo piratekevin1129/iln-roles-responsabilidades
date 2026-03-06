@@ -253,11 +253,13 @@
     overflow: hidden;
     box-shadow: 4px 4px 10px 0px rgba(0,0,0,0.3);
 }
-#instrucciones-box,
-#instrucciones2-box{
+#instrucciones-box{
     width: 450px;
     padding: 30px;
     background-color: #fff;
+}
+#instrucciones2-box{
+    width: 430px;
 }
 #informacion-box{
     width: 85%;
@@ -311,161 +313,15 @@
     text-align: center;
 }
 
-.instrucciones2-box-col{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    margin-bottom: 10px;
-}
-.instrucciones2-box-col > img{
-    width: 80px;
-    height: auto;
-    margin-right: 10px;
-}
-.instrucciones2-box-col > p{
-    width: auto;
-    width: calc(100% - 90px);
-    width: -moz-calc(100% - 90px);
-    font-family: 'Britannic-Regular';
-    font-size: 1.1rem;
-    color: #000;
-}
-.instrucciones2-box-row{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
-}
-
-.instrucciones-box-btn1,
-.instrucciones-box-btn2,
-.instrucciones2-box-btn1,
-.instrucciones2-box-btn2,
-.informacion-box-btn1,
-.informacion-box-btn2{
-    display: flex;
-    justify-content: center;
-    height: auto;
-    padding: 10px;
-
-    color: #fff;
-    font-size: 1.2rem;
-    text-align: center;
-    cursor: pointer;
-    transition: background-color 0.25s;
-}
-.instrucciones-box-btn1,
-.instrucciones-box-btn2{
-    margin-left: auto;
-    margin-right: auto;
-    font-family: 'Britannic-Regular';
-}
-.instrucciones2-box-btn1 span:first-child,
-.informacion-box-btn1 span:first-child{
-    color: #ff0;
-}
-.instrucciones2-box-btn1 span:last-child,
-.informacion-box-btn1 span:last-child{
-    font-family: 'Britannic-Regular';
-}
-.instrucciones2-box-btn2 span:first-child,
-.informacion-box-btn2 span:first-child{
-    font-family: 'Britannic-Regular';
-}
-.instrucciones2-box-btn2 span:last-child,
-.informacion-box-btn2 span:last-child{
-    margin-left: 5px;
-}
-
-.instrucciones-box-btn1,
-.instrucciones-box-btn2{
-    width: 300px;
-}
-.instrucciones2-box-btn1,
-.instrucciones2-box-btn2,
-.informacion-box-btn1,
-.informacion-box-btn2{
-    width: auto;
-}
-
-.instrucciones-box-btn1,
-.instrucciones2-box-btn1,
-.informacion-box-btn1{
-    background-color: #4b85fd;
-}
-.instrucciones-box-btn1{
-    margin-bottom: 5px;
-}
-.instrucciones-box-btn1:hover,
-.instrucciones2-box-btn1:hover,
-.informacion-box-btn1:hover{
-    background-color: #4174ce;
-    animation: animacion-boton-over 0.25s infinite forwards linear;
-}
-.instrucciones-box-btn2,
-.instrucciones2-box-btn2,
-.informacion-box-btn2{
-    background-color: #6b7280;
-}
-.instrucciones-box-btn2:hover,
-.instrucciones2-box-btn2:hover,
-.informacion-box-btn2:hover{
-    background-color: #5a616b;
-    animation: animacion-boton-over 0.25s infinite forwards linear;
-}
-@keyframes animacion-boton-over {
-    0%,50%,100%{
-        transform: translateX(0px);
-    }
-    25%{
-        transform: translateX(-2px);
-    }
-    75%{
-        transform: translateX(2px);
-    }
-}
-
-.instrucciones-off{
-    visibility: hidden;
-    background-color: rgba(0,0,0,0);
-    transition: visibility 0.5s, background-color 0.25s 0.25s;
-}
-
-.instrucciones-off #instrucciones-box,
-.instrucciones-off #instrucciones2-box,
-.instrucciones-off #informacion-box{
-    top: -20px;
-    opacity: 0;
-
-    transition: top 0.25s, opacity 0.25s;
-}
-
-.instrucciones-on{
-    visibility: visible;
-    background-color: rgba(0,0,0,0.65);
-    transition: visibility 0s, background-color 0.25s;
-}
-
-.instrucciones-on #instrucciones-box,
-.instrucciones-on #instrucciones2-box,
-.instrucciones-on #informacion-box{
-    top: 0px;
-    opacity: 1;
-
-    transition: top 0.25s 0.25s, opacity 0.25s 0.25s;
-}
-
-/*************INFORMACIÓN**************/
+/**************INFORMACIÓN************/
 
 .informacion-box-header{
     width: 100%;
     background-color: #4b85fd;
     padding: 10px;
 }
-.informacion-box-header h1{
+.informacion-box-header h1,
+.instrucciones2-box-header h1{
     font-family: 'Britannic-Bold';
     font-size: 1.4rem;
     color: #fff;
@@ -478,7 +334,7 @@
     color: #fff;
     text-align: center;
 }
-            
+
 .informacion-box-body{
     width: 100%;
     display: flex;
@@ -572,17 +428,6 @@
     background-image: url(../images/icon-list.svg);
 }
 
-.informacion-box-botones{
-    width: 100%;
-    height: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    background-color: #ffffff;
-    padding: 10px 15px;
-}
-
-
 .informacion-box-body .informacion-box-body-card:nth-child(1){
     border-left-color: #4b85fd;
 }
@@ -607,3 +452,172 @@
 .informacion-box-body .informacion-box-body-card:nth-child(4) .informacion-body-card-title > div{
     background-color: #d93300;
 }
+
+.informacion-box-botones,
+.instrucciones2-box-botones{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    background-color: #ffffff;
+    padding: 10px 15px;
+}
+
+/**************INSTRUCCIONES 2************/
+.instrucciones2-box-col{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+.instrucciones2-box-col > img{
+    width: 80px;
+    height: auto;
+    margin-right: 10px;
+}
+.instrucciones2-box-col > p{
+    width: auto;
+    width: calc(100% - 90px);
+    width: -moz-calc(100% - 90px);
+    font-family: 'Britannic-Regular';
+    font-size: 1.1rem;
+    color: #000;
+}
+
+.instrucciones2-box-header{
+    width: 100%;
+    padding: 15px;
+    background-color: #4b85fd;
+}
+.instrucciones2-box-body{
+    width: 100%;
+    padding: 20px;
+    background-color: #f7f9f9;
+}
+
+/***********BOTONES******/
+
+.instrucciones-box-btn1,
+.instrucciones-box-btn2,
+.instrucciones2-box-btn1,
+.instrucciones2-box-btn2,
+.informacion-box-btn1,
+.informacion-box-btn2{
+    display: flex;
+    justify-content: center;
+    height: auto;
+    padding: 10px;
+
+    color: #fff;
+    font-size: 1.2rem;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.25s;
+}
+.instrucciones-box-btn1,
+.instrucciones-box-btn2{
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Britannic-Regular';
+}
+.instrucciones2-box-btn1 span:first-child,
+.informacion-box-btn1 span:first-child{
+    color: #ff0;
+}
+.instrucciones2-box-btn1 span:last-child,
+.informacion-box-btn1 span:last-child{
+    font-family: 'Britannic-Regular';
+}
+.instrucciones2-box-btn2 span:first-child,
+.informacion-box-btn2 span:first-child{
+    font-family: 'Britannic-Regular';
+}
+.instrucciones2-box-btn2 span:last-child,
+.informacion-box-btn2 span:last-child{
+    margin-left: 5px;
+}
+
+.instrucciones-box-btn1,
+.instrucciones-box-btn2{
+    width: 300px;
+}
+.instrucciones2-box-btn1,
+.instrucciones2-box-btn2,
+.informacion-box-btn1,
+.informacion-box-btn2{
+    width: auto;
+}
+
+.instrucciones-box-btn1,
+.instrucciones2-box-btn1,
+.informacion-box-btn1{
+    background-color: #4b85fd;
+}
+.instrucciones-box-btn1{
+    margin-bottom: 5px;
+}
+.instrucciones-box-btn1:hover,
+.instrucciones2-box-btn1:hover,
+.informacion-box-btn1:hover{
+    background-color: #4174ce;
+    animation: animacion-boton-over 0.25s infinite forwards linear;
+}
+.instrucciones-box-btn2,
+.instrucciones2-box-btn2,
+.informacion-box-btn2{
+    background-color: #6b7280;
+}
+.instrucciones-box-btn2:hover,
+.instrucciones2-box-btn2:hover,
+.informacion-box-btn2:hover{
+    background-color: #5a616b;
+    animation: animacion-boton-over 0.25s infinite forwards linear;
+}
+@keyframes animacion-boton-over {
+    0%,50%,100%{
+        transform: translateX(0px);
+    }
+    25%{
+        transform: translateX(-2px);
+    }
+    75%{
+        transform: translateX(2px);
+    }
+}
+
+/*********** ON - OFF *****/
+
+.instrucciones-off{
+    visibility: hidden;
+    background-color: rgba(0,0,0,0);
+    transition: visibility 0.5s, background-color 0.25s 0.25s;
+}
+
+.instrucciones-off #instrucciones-box,
+.instrucciones-off #instrucciones2-box,
+.instrucciones-off #informacion-box{
+    top: -20px;
+    opacity: 0;
+
+    transition: top 0.25s, opacity 0.25s;
+}
+
+.instrucciones-on{
+    visibility: visible;
+    background-color: rgba(0,0,0,0.65);
+    transition: visibility 0s, background-color 0.25s;
+}
+
+.instrucciones-on #instrucciones-box,
+.instrucciones-on #instrucciones2-box,
+.instrucciones-on #informacion-box{
+    top: 0px;
+    opacity: 1;
+
+    transition: top 0.25s 0.25s, opacity 0.25s 0.25s;
+}
+

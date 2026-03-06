@@ -159,20 +159,24 @@
 
     <div id="instrucciones2" class="instrucciones-off">
         <div id="instrucciones2-box">
-            <div class="instrucciones2-box-col">
-                <img src="assets/images/paso-1.png" />
-                <p>Observa el escenario:<br>cada nivel presenta situaciones laborales diferentes</p>
+            <div class="instrucciones2-box-header">
+                <h1>Instrucciones del juego</h1>
             </div>
-            <div class="instrucciones2-box-col">
-                <img src="assets/images/paso-2.png" />
-                <p>Identifica violaciones:<br>Haz clic en situaciones que NO cumplan las responsabilidades</p>
+            <div class="instrucciones2-box-body">
+                <div class="instrucciones2-box-col">
+                    <img src="assets/images/paso-1.png" />
+                    <p>Observa el escenario:<br>cada nivel presenta situaciones laborales diferentes</p>
+                </div>
+                <div class="instrucciones2-box-col">
+                    <img src="assets/images/paso-2.png" />
+                    <p>Identifica violaciones:<br>Haz clic en situaciones que NO cumplan las responsabilidades</p>
+                </div>
+                <div class="instrucciones2-box-col">
+                    <img src="assets/images/paso-3.png" />
+                    <p>Completa niveles:<br>Supera los 3 niveles</p>
+                </div>
             </div>
-            <div class="instrucciones2-box-col">
-                <img src="assets/images/paso-3.png" />
-                <p>Completa niveles:<br>Supera los 3 niveles</p>
-            </div>
-
-            <div class="instrucciones2-box-row">
+            <div class="instrucciones2-box-botones">
                 <button class="instrucciones2-box-btn1" onclick="clickVolverInstrucciones()">
                     <span>←</span>
                     <span>Volver al inicio</span>
@@ -305,7 +309,7 @@
             getE('instrucciones2').className = 'instrucciones-off'
             informacion_mp3.pause()
             getE('informacion').className = 'instrucciones-off'
-            
+
             getE('instrucciones').className = 'instrucciones-on'
             intro_mp3.currentTime = 0
             intro_mp3.play()
