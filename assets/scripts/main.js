@@ -138,18 +138,69 @@ function clickPunto(punto,seccion,p){
     global_audio.currentTime = 0
     global_audio.play()
     click_mp3.play()
+
+    //comprobar
+    var total_vistos = 0
+    for(i = 0;i<puntos_data[seccion].length;i++){
+        if(puntos_data[seccion][i].visto){
+            total_vistos++
+        }
+    }
+
+    if(total_vistos==puntos_data[seccion].length){
+        global_audio.onended = function(){
+            global_audio.onended = null
+            nextGame()
+        }
+    }
 }
+
 
 function overBtn(){
     over_mp3.play()
 }
 
 function startGame(){
-    scene++
-    getE('cubo-title').innerHTML = titulos[scene-1]
-    getE('cubo-title').className = 'cubo-title-on'
-    getE('cubo-container').style.transform = 'translateZ(-'+parseInt(ancho_fondo/2)+'px) rotateY('+cubo_positions[scene]+'deg)'
     getE('instrucciones').className = 'instrucciones-off'
+    scene++
+    setScene()
+}
+
+var animacion_cubo = null;
+function setScene(){
+    getE('cubo-title').className = 'cubo-title-off'
+    getE('cubo-container').style.transform = 'translateZ(-'+parseInt(ancho_fondo/2)+'px) rotateY('+cubo_positions[scene]+'deg)'
+
+    animacion_cubo = setTimeout(function(){
+        clearTimeout(animacion_cubo)
+        animacion_cubo = null;
+
+        getE('cubo-title').innerHTML = titulos[scene-1]
+        getE('cubo-title').className = 'cubo-title-on'
+        if(scene==1){
+            global_audio = intro1_mp3
+        }else if(scene==2){
+            global_audio = intro2_mp3
+        }else if(scene==3){
+            global_audio = intro3_mp3
+        }
+
+        if(global_audio!=null){
+            global_audio.play()
+        }
+    },1000)
+
     modal_mp3.currentTime = 0
     modal_mp3.play()
+}
+
+
+function nextGame(){
+    getE('tooltip').className = 'tooltip-off'
+    scene++
+    if(scene<puntos_data.length){
+        alert("terminó")
+    }else{
+        setScene()
+    }
 }

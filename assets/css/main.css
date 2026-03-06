@@ -75,9 +75,9 @@
     font-size: 1.2rem;
     color: #fff;
     text-align: center;
-    transition: top 0.5s;
     text-shadow: 0px 0px 3px rgba(0,0,0,0.5);
     box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.7);
+    transition: top 0.5s;
 }
 .cubo-title-on{
     top: 15px;

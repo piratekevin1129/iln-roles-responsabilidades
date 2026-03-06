@@ -90,59 +90,6 @@ var puntos_data = [
     [
         {
             id:1,
-            title:'Trabajador desinteresado',
-            text:'No contribuye a objetivos',
-            x:144,
-            y:650,
-            visto:false
-        },{
-            id:2,
-            title:'Operario sin EPP',
-            text:'No cuida su salud',
-            x:1373,
-            y:696,
-            visto:false
-        },{
-            id:3,
-            title:'Residuos mezclados',
-            text:'No separa correctamente',
-            x:483,
-            y:601,
-            visto:false
-        },{
-            id:4,
-            title:'Trabajador enfermo',
-            text:'Ocultó su estado de salud',
-            x:716,
-            y:617,
-            visto:false
-        },{
-            id:5,
-            title:'Zona delimitada',
-            text:'Correctamente señalizada',
-            x:1244,
-            y:838,
-            visto:false
-        },{
-            id:6,
-            title:'Herramientas',
-            text:'En buen estado',
-            x:1182,
-            y:522,
-            visto:false
-        },{
-            id:7,
-            title:'Equipo completo',
-            text:'Usa todo el EPP',
-            x:1685,
-            y:785,
-            visto:false
-        }
-    ],
-
-    [
-        {
-            id:1,
             title:'No se lavó las manos',
             text:'No cumple bioseguridad',
             x:686,
@@ -205,11 +152,64 @@ var puntos_data = [
             y:654,
             visto:false
         }
+    ],
+
+    [
+        {
+            id:1,
+            title:'Trabajador desinteresado',
+            text:'No contribuye a objetivos',
+            x:144,
+            y:650,
+            visto:false
+        },{
+            id:2,
+            title:'Operario sin EPP',
+            text:'No cuida su salud',
+            x:1373,
+            y:696,
+            visto:false
+        },{
+            id:3,
+            title:'Residuos mezclados',
+            text:'No separa correctamente',
+            x:483,
+            y:601,
+            visto:false
+        },{
+            id:4,
+            title:'Trabajador enfermo',
+            text:'Ocultó su estado de salud',
+            x:716,
+            y:617,
+            visto:false
+        },{
+            id:5,
+            title:'Zona delimitada',
+            text:'Correctamente señalizada',
+            x:1244,
+            y:838,
+            visto:false
+        },{
+            id:6,
+            title:'Herramientas',
+            text:'En buen estado',
+            x:1182,
+            y:522,
+            visto:false
+        },{
+            id:7,
+            title:'Equipo completo',
+            text:'Usa todo el EPP',
+            x:1685,
+            y:785,
+            visto:false
+        }
     ]
 ]
 
 var titulos = [
     'Encuentra las violaciones en la oficina de ILN Consulting',
-    'Detecta las fallas en el manejo de emergencias',
-    'Identifica las fallas en el sitio de obra'
+    'Identifica las fallas en el sitio de obra',
+    'Detecta las fallas en el manejo de emergencias'
 ]
