@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roles responsabilidades</title>
+
+    <link href="assets/css/fonts.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/reset.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/loader.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/main.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/responsive.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div id="contenedor">
+        <div id="fondo">
+            <div id="cubo">
+                <div id="cubo-container">
+                    <div id="cara0" class="fondo-blur-on">
+                        <div class="cara-container">
+                            <div class="imagen-fondo">
+                                <img src="assets/images/fondo1.png" />
+                            </div>
+                        </div>
+                    </div>
+                    <div id="cara1">
+                        <div class="cara-container">
+                            <div class="imagen-fondo">
+                                <img src="assets/images/fondo1.png" />
+                            </div>
+                            <div id="puntos1"></div>
+                        </div>
+                    </div>
+                    <div id="cara2">
+                        <div class="cara-container">
+                            <div class="imagen-fondo">
+                                <img src="assets/images/fondo2.png" />
+                            </div>
+                            <div id="puntos2"></div>
+                        </div>
+                    </div>
+                    <div id="cara3">
+                        <div class="cara-container">
+                            <div class="imagen-fondo">
+                                <img src="assets/images/fondo3.png" />
+                            </div>
+                            <div id="puntos3"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="tooltip" class="tooltip-off">
+                <div id="tooltip-after"></div>
+                <div id="tooltip-before"></div>
+                <p id="tooltip-txt">...</p>
+            </div>
+        </div>
+    </div>
+
+    <h1 id="cubo-title" class="cubo-title-off">...</h1>
+
+    <div id="instrucciones" class="instrucciones-on">
+        <div id="instrucciones-box">
+            <img src="assets/images/escudo.png" />
+            <h2>Detective de seguridad</h2>
+            <p>Aprende y practica tus responsabilidades en SST</p>
+            <div class="instrucciones-box-row">
+                <div class="instrucciones-box-col">
+                    <h3>13</h3>
+                    <p>Responsabilidades</p>
+                </div>
+                <div class="instrucciones-box-col">
+                    <h3>3</h3>
+                    <p>Niveles</p>
+                </div>
+            </div>
+            <!--<button class="instrucciones-box-btn1">Estudiar responsabilidades</button>-->
+            <button class="instrucciones-box-btn2" onclick="clickComenzar()">Comenzar la investigación</button>
+        </div>
+    </div>
+
+    <div id="instrucciones2" class="instrucciones-off">
+        <div id="instrucciones2-box">
+            <div class="instrucciones2-box-col">
+                <img src="assets/images/paso-1.png" />
+                <p>Observa el escenario:<br>cada nivel presenta situaciones laborales diferentes</p>
+            </div>
+            <div class="instrucciones2-box-col">
+                <img src="assets/images/paso-2.png" />
+                <p>Identifica violaciones:<br>Haz clic en situaciones que NO cumplan las responsabilidades</p>
+            </div>
+            <div class="instrucciones2-box-col">
+                <img src="assets/images/paso-3.png" />
+                <p>Completa niveles:<br>Supera los 3 niveles</p>
+            </div>
+
+            <div class="instrucciones2-box-row">
+                <button class="instrucciones2-box-btn">
+                    <span>←</span>
+                    <span>Volver al inicio</span>
+                </button>
+                <button class="instrucciones2-box-btn">
+                    <span>→</span>
+                    <span>Iniciar el juego</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="loader" class="loader-on">
+        <div id="loader-img">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                <path fill="#999999" d="M286.7 96.1C291.7 113 282.1 130.9 265.2 135.9C185.9 159.5 128.1 233 128.1 320C128.1 426 214.1 512 320.1 512C426.1 512 512.1 426 512.1 320C512.1 233.1 454.3 159.6 375 135.9C358.1 130.9 348.4 113 353.5 96.1C358.6 79.2 376.4 69.5 393.3 74.6C498.9 106.1 576 204 576 320C576 461.4 461.4 576 320 576C178.6 576 64 461.4 64 320C64 204 141.1 106.1 246.9 74.6C263.8 69.6 281.7 79.2 286.7 96.1z" />
+            </svg>
+        </div>
+        <div id="loader-bar">
+            <div id="loader-bar2"></div>
+        </div>
+    </div>
+
+    <script src="assets/scripts/data.js"></script>
+    <script src="assets/scripts/loader.js"></script>
+    <script src="assets/scripts/main.js"></script>
+
+    <script>
+        var over_mp3 = null;
+        var click_mp3 = null;
+        var modal_mp3 = null;
+        var underground_mp3 = null;
+
+        var intro_mp3 = null;
+        var instrucciones_mp3 = null;
+
+        var intro1_mp3 = null;
+        var intro2_mp3 = null;
+        var intro3_mp3 = null;
+
+        var global_audio = null;
+        var audios_data = [
+            [],[],[]
+        ]
+
+        window.onload = function(){
+            setFondo()
+
+            loadTrack({src: 'assets/sounds/click.mp3', callBack: function(data){
+                over_mp3 = data
+                checkAudios(true)
+            }})
+            loadTrack({src: 'assets/sounds/click2.mp3', callBack: function(data){
+                click_mp3 = data
+                checkAudios(true)
+            }})
+            loadTrack({src: 'assets/sounds/modal.mp3', callBack: function(data){
+                modal_mp3 = data
+                checkAudios(true)
+            }})
+            loadTrack({src: 'assets/sounds/underground.mp3', callBack: function(data){
+                underground_mp3 = data
+                underground_mp3.loop = true
+                checkAudios(true)
+            }})
+
+            loadTrack({src: 'assets/audios/intro.mp3', callBack: function(data){
+                intro_mp3 = data
+                checkAudios(true)
+            }})
+            loadTrack({src: 'assets/audios/1/intro.mp3', callBack: function(data){
+                intro1_mp3 = data
+                checkAudios(true)
+            }})
+            loadTrack({src: 'assets/audios/2/intro.mp3', callBack: function(data){
+                intro2_mp3 = data
+                checkAudios(true)
+            }})
+            loadTrack({src: 'assets/audios/3/intro.mp3', callBack: function(data){
+                intro3_mp3 = data
+                checkAudios(true)
+            }})
+            loadTrack({src: 'assets/audios/instrucciones.mp3', callBack: function(data){
+                instrucciones_mp3 = data
+                checkAudios(true)
+            }})
+        }
+
+        function comenzarJuego(){
+            loadPuntos()
+        }
+
+        function loadedPuntos(){
+            unsetLoader()
+
+            getE('instrucciones').className = 'instrucciones-on'
+            getE('cubo-container').className = 'cubo-container-animation'
+            
+            underground_mp3.play()
+            intro_mp3.play()
+        }
+
+        function clickComenzar(){
+            intro_mp3.pause()
+            startGame()
+            over_mp3.play()
+        }
+    </script>
+</body>
+
+</html>

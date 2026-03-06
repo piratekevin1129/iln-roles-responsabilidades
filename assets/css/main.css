@@ -1,0 +1,409 @@
+#contenedor{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+
+    display: block;
+    overflow: hidden;
+}
+
+#fondo{
+    position: absolute;
+    width: auto;
+    height: auto;
+    background: #efeeec;
+    background: radial-gradient(#efeeec, #b6bbc1);
+}
+
+#cubo{
+    position: absolute;
+    width: auto;
+    height: auto;
+    perspective: 1000px;
+    top: 0px;
+    left: 0px;
+}
+
+#cubo-container{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    transform-style: preserve-3d;
+}
+.cubo-container-animation{
+    transition: transform 1s;
+}
+#cubo-container > div{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+}
+.fondo-blur-on{
+    filter: blur(5px);
+}
+#cara0{
+    transform: rotateY(-90deg) translateZ(50%);
+}
+#cara1{
+    transform: rotateY(0deg) translateZ(50%);
+}
+#cara2{
+    transform: rotateY(90deg) translateZ(50%);
+}
+#cara3{
+    transform: rotateY(180deg) translateZ(50%);
+}
+
+.cara-container{
+    width: 100%;
+    height: 100%;
+}
+#cubo-title{
+    position: absolute;
+    display: flex;
+    width: auto;
+    flex-wrap: nowrap;
+    padding: 10px 20px;
+    border-radius: 8px 0px 8px 0px;
+    background-color: #4b85fd;
+    left: 15px;
+    
+    font-family: 'Britannic-Regular';
+    font-size: 1.2rem;
+    color: #fff;
+    text-align: center;
+    transition: top 0.5s;
+    text-shadow: 0px 0px 3px rgba(0,0,0,0.5);
+    box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.7);
+}
+.cubo-title-on{
+    top: 15px;
+}
+.cubo-title-off{
+    top: -100px;
+}
+.imagen-fondo{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+}
+.imagen-fondo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+#puntos1,#puntos2,#puntos3{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+}
+.punto{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    transform: translate(-50%,-50%);
+    cursor: pointer;
+}
+.punto > div{
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(../images/punto.png);
+    box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.4);
+    border-radius: 50%;
+}
+.punto-novisto > div{
+    animation: animacion-punto-reposo 1s infinite forwards linear;
+}
+.punto-visto > div{
+    background-image: url(../images/punto-visto.png) !important;
+}
+
+.punto:hover > div{
+    animation: animacion-punto 0.25s 1 forwards linear !important;
+}
+@keyframes animacion-punto{
+    0% {
+        transform: scale(1);
+    }
+    40%{
+        transform: scale(0.7);
+    }
+    70%{
+        transform: scale(1.2);
+    }
+    90%{
+        transform: scale(0.9);
+    }
+    100%{
+        transform: scale(1.1);
+    }
+}
+@keyframes animacion-punto-reposo{
+    0%,100%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.2);
+    }
+}
+
+/****************TOOLTIP***************/
+
+#tooltip{
+    position: absolute;
+    width: auto;
+    height: auto;
+    max-width: 500px;
+    padding: 15px;
+}
+
+.tooltip-off{
+    visibility: hidden;
+}
+.tooltip-on{
+    visibility: visible;
+}
+
+#tooltip-before{
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    box-sizing: content-box;
+    border-left: 8px solid rgba(255,255,255,0);
+    border-right: 8px solid rgba(255,255,255,0);
+
+    transform: translateX(-50%);
+    left: 50%;
+}
+.tooltip-before-top{
+    top: -9px;
+    border-bottom: 10px solid #ffffff;
+}
+.tooltip-before-bot{
+    top: 100%;
+    top: calc(100% - 1px);
+    top: -moz-calc(100% - 1px);
+    border-top: 10px solid #ffffff;
+}
+#tooltip-after{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    background-color: #fff;
+    top: 0px;
+    left: 0px;
+}
+.tooltip-after-top{
+    box-shadow: 0px -5px 10px -2px rgba(0,0,0,0.7);
+}
+.tooltip-after-bot{
+    box-shadow: 0px 5px 10px -2px rgba(0,0,0,0.7);
+}
+
+#tooltip p{
+    position: relative;
+    font-family: 'Inter-Regular';
+    font-size: 1rem;
+    color: #000000;
+    text-align: center;
+}
+#tooltip p span{
+    font-family: 'Inter-SemiBold';
+}
+
+/**************INSTRUCCIONES************/
+
+#instrucciones,
+#instrucciones2{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#instrucciones-box,
+#instrucciones2-box{
+    width: 450px;
+    height: auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 4px 4px 10px 0px rgba(0,0,0,0.3);
+}
+#instrucciones-box > img{
+    width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#instrucciones-box > h2{
+    font-family: 'Britannic-Bold';
+    font-size: 1.5rem;
+    color: #4b85fd;
+    margin-bottom: 15px;
+    text-align: center;
+}
+#instrucciones-box > p{
+    font-family: 'Inter-SemiBold';
+    font-size: 1rem;
+    color: #000000;
+    text-align: center;
+}
+.instrucciones-box-row{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    margin: 25px 0px;
+}
+.instrucciones-box-col{
+    width: auto;
+    height: auto;
+    display: block;
+    margin: 0px 15px;
+}
+.instrucciones-box-col h3{
+    font-family: 'Britannic-Bold';
+    font-size: 2rem;
+    color: #4b85fd;
+    text-align: center;
+    margin-bottom: 2px;
+}
+.instrucciones-box-col p{
+    font-family: 'Inter-Regular';
+    font-size: 1.1rem;
+    color: #000000;
+    text-align: center;
+}
+
+.instrucciones2-box-col{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+.instrucciones2-box-col > img{
+    width: 60px;
+    height: auto;
+    margin-right: 10px;
+}
+.instrucciones2-box-col > p{
+    width: auto;
+    width: calc(100% - 70px);
+    width: -moz-calc(100% - 70px);
+    font-family: 'Britannic-Regular';
+    font-size: 1.2rem;
+    color: #000;
+}
+.instrucciones2-box-row{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.instrucciones-box-btn1,
+.instrucciones-box-btn2,
+.instrucciones2-box-btn{
+    display: flex;
+    justify-content: center;
+    height: auto;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+
+    font-family: 'Britannic-Regular';
+    color: #fff;
+    font-size: 1.2rem;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.25s;
+}
+.instrucciones-box-btn1,
+.instrucciones-box-btn2{
+    width: 300px;
+}
+.instrucciones2-box-btn{
+    width: auto;
+}
+
+.instrucciones-box-btn1,
+.instrucciones2-box-row > button:first-child{
+    background-color: #4b85fd;
+}
+.instrucciones-box-btn1{
+    margin-bottom: 5px;
+}
+.instrucciones-box-btn1:hover,
+.instrucciones2-box-row > button:first-child{
+    background-color: #4174ce;
+    animation: animacion-boton-over 0.25s infinite forwards linear;
+}
+.instrucciones-box-btn2,
+.instrucciones2-box-row > button:last-child{
+    background-color: #6b7280;
+}
+.instrucciones-box-btn2:hover,
+.instrucciones2-box-row > button:last-child{
+    background-color: #5a616b;
+    animation: animacion-boton-over 0.25s infinite forwards linear;
+}
+@keyframes animacion-boton-over {
+    0%,50%,100%{
+        transform: translateX(0px);
+    }
+    25%{
+        transform: translateX(-2px);
+    }
+    75%{
+        transform: translateX(2px);
+    }
+}
+
+.instrucciones-off{
+    visibility: hidden;
+    background-color: rgba(0,0,0,0);
+    transition: visibility 0.5s, background-color 0.25s 0.25s;
+}
+
+.instrucciones-off #instrucciones-box,
+.instrucciones-off #instrucciones2-box{
+    top: -20px;
+    opacity: 0;
+
+    transition: top 0.25s, opacity 0.25s;
+}
+
+.instrucciones-on{
+    visibility: visible;
+    background-color: rgba(0,0,0,0.65);
+    transition: visibility 0s, background-color 0.25s;
+}
+
+.instrucciones-on #instrucciones-box,
+.instrucciones-on #instrucciones2-box{
+    top: 0px;
+    opacity: 1;
+
+    transition: top 0.25s 0.25s, opacity 0.25s 0.25s;
+}

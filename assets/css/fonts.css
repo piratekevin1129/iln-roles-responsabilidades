@@ -1,0 +1,28 @@
+@font-face {
+    font-family: "Britannic-Regular";
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+    src: url("fonts/Britannic-Regular.ttf") format('truetype');
+}
+@font-face {
+    font-family: "Britannic-Bold";
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+    src: url("fonts/Britannic-Bold.ttf") format('truetype');
+}
+@font-face {
+    font-family: "Inter-Regular";
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+    src: url("fonts/Inter-Regular.ttf") format('truetype');
+}
+@font-face {
+    font-family: "Inter-SemiBold";
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+    src: url("fonts/Inter-SemiBold.ttf") format('truetype');
+}
