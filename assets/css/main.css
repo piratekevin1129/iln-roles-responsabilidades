@@ -325,8 +325,10 @@
     font-family: 'Britannic-Bold';
     font-size: 1.4rem;
     color: #fff;
-    margin-bottom: 2px;
     text-align: center;
+}
+.informacion-box-header h1{
+    margin-bottom: 2px;
 }
 .informacion-box-header h2{
     font-family: 'Britannic-Regular';
@@ -526,7 +528,7 @@
 }
 .instrucciones2-box-btn1 span:first-child,
 .informacion-box-btn1 span:first-child{
-    color: #ff0;
+    margin-right: 5px;
 }
 .instrucciones2-box-btn1 span:last-child,
 .informacion-box-btn1 span:last-child{
